@@ -41,5 +41,5 @@ An andoid application which performs the scientific calculator's functionalities
     * Java
 - - - -
 
-* License
+* License -
     * This project is licensed under the Eclipse Public License.
