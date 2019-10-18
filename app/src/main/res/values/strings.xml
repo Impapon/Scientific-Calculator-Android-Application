@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Sharafat_Scientific_Calculator</string>
+    <string name="square_root_symbol">\u221a</string>
+    <string name="cube_root_symbol">\u221B</string>
+    <string name="fourth_root_symbol">\u221a</string>
+    <string name="pie_symbol">\u03C0</string>
+    <string name="xsquare">x\u00B2</string>
+    <string name="xcube">x\u00B3</string>
+    <string name="exponent">e\u00B0</string>
+    <string name="dividesymbol">x\u246B</string>
+    <string name="aboutstring">"\n\n\n\n\nThis is a Scientific Calculator app
+            \n built with Android Studio and Java\n\n
+            \n\n Instructor:   Md. Jueal Mia\n
+            \n\nDeveloper:\n\n  Redwan Sharafat Kabir, \n Department: CSE, \n Daffodil Internationl University"
+    </string>
+</resources>
