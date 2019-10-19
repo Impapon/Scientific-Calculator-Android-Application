@@ -11,12 +11,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtbtn;
-    float mValueOne , mValueTwo ;
-    double a;
-    double ans = 0;
-    boolean mAddition, mSubtract, mMultiplication, mDivision, mReminder, mNoPower,
-            istpower2ndno,mSin,mArithmetic,mCos,mTan, piecheck = false;
+    TextView txtview;
+    float ValueOne , ValueTwo ;
+    double a, ans = 0;
+    boolean Addition, Subtract, Multiplication, Division, Reminder, NoPower,
+            istpower, Sin, Arithmetic, Cos, Tan;
+
     Button  about, clearbutton, dividebutton, multiplybutton, deletebutton, button7, button8, button9, minusbutton, button4,
             button5, button6, plusbutton, button1, button2, button3, button0, pointbutton, equalbutton, xfactorialbutton,
             sinbutton, cosbutton, tanbutton, piebutton, squarerootbutton, modulosbutton,
@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        scientific_operation();
-    }
-    public void scientific_operation(){
+//        scientific_operation();
+//    }
+//    public void scientific_operation(){
         about=(Button)findViewById(R.id.aboutId);
-        txtbtn=(TextView) findViewById(R.id.txt);
+        txtview=(TextView) findViewById(R.id.txt);
         clearbutton=(Button) findViewById(R.id.clearrbtn);
         dividebutton=(Button) findViewById(R.id.dividebtn);
         multiplybutton=(Button) findViewById(R.id.multiplybtn);
@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    istpower2ndno = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    istpower = true;
+                    txtview.setText(null);
                 }
                 catch (Exception e) {
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Double n = Double.parseDouble(txtbtn.getText().toString());
+                    Double n = Double.parseDouble(txtview.getText().toString());
                     Double exp = (Double) Math.pow(2.718281828, n);
-                    txtbtn.setText(exp+"");
+                    txtview.setText(exp+"");
                 }
                 catch (Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    mReminder = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    Reminder = true;
+                    txtview.setText(null);
 
 //                    a = Double.parseDouble(txtbtn.getText().toString());
 //                    Double result = (Double) Math.cos(Math.toRadians(a));
@@ -115,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     String str;
-                    str = txtbtn.getText().toString();
+                    str = txtview.getText().toString();
                     str = str.substring(0, str.length() - 1);
-                    txtbtn.setText(str);
+                    txtview.setText(str);
                 }
                 catch (Exception e){}
             }
@@ -126,16 +126,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                 txtbtn.setText(Math.PI + " ");
-                 txtbtn.setText(Double.parseDouble(String.valueOf(Math.PI)) + " ");
+                txtview.setText(Double.parseDouble(String.valueOf(Math.PI)) + " ");
             }
         });
         sinbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    a = Double.parseDouble(txtbtn.getText().toString());
+                    a = Double.parseDouble(txtview.getText().toString());
                     Double result = (Double) Math.sin(Math.toRadians(a));
-                    txtbtn.setText(result + "");
+                    txtview.setText(result + "");
                 }
                 catch(Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -148,9 +148,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    a = Double.parseDouble(txtbtn.getText().toString());
+                    a = Double.parseDouble(txtview.getText().toString());
                     Double result = (Double) Math.cos(Math.toRadians(a));
-                    txtbtn.setText(result + "");
+                    txtview.setText(result + "");
                 }
                 catch(Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -163,9 +163,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    a = Double.parseDouble(txtbtn.getText().toString());
+                    a = Double.parseDouble(txtview.getText().toString());
                     Double result = (Double) Math.tan(Math.toRadians(a));
-                    txtbtn.setText(result + "");
+                    txtview.setText(result + "");
                 }
                 catch(Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    a = Double.parseDouble(txtbtn.getText().toString());
+                    a = Double.parseDouble(txtview.getText().toString());
                     int er = 0; double i, s = 1;
                     if (a< 0) {
                         er = 20;
@@ -187,8 +187,8 @@ public class MainActivity extends AppCompatActivity {
                         for (i = 2; i <= a; i += 1.0)
                             s *= i;
                     }
-                    txtbtn.setText("");
-                    txtbtn.setText(txtbtn.getText().toString() + s);
+                    txtview.setText("");
+                    txtview.setText(txtview.getText().toString() + s);
                 }
                 catch(Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
@@ -201,9 +201,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    a = Math.sqrt(Double.parseDouble(txtbtn.getText().toString()));
-                    txtbtn.setText("");
-                    txtbtn.setText(txtbtn.getText().toString() + a);
+                    a = Math.sqrt(Double.parseDouble(txtview.getText().toString()));
+                    txtview.setText("");
+                    txtview.setText(txtview.getText().toString() + a);
                 }
                 catch(Exception e){}
             }
@@ -211,92 +211,92 @@ public class MainActivity extends AppCompatActivity {
         clearbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtbtn.setText("");
+                txtview.setText("");
             }
         });
         dividebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtbtn.setText(null);
+                txtview.setText(null);
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"1");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"1");
+                Arithmetic=true;
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"2");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"2");
+                Arithmetic=true;
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"3");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"3");
+                Arithmetic=true;
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"4");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"4");
+                Arithmetic=true;
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"5");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"5");
+                Arithmetic=true;
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"6");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"6");
+                Arithmetic=true;
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"7");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"7");
+                Arithmetic=true;
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"8");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"8");
+                Arithmetic=true;
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"9");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"9");
+                Arithmetic=true;
             }
         });
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+"0");
-                mArithmetic=true;
+                txtview.setText(txtview.getText()+"0");
+                Arithmetic=true;
             }
         });
         plusbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try{
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    mAddition = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    Addition = true;
+                    txtview.setText(null);
                 }
                 catch (Exception e) {}
             }
@@ -305,9 +305,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    mSubtract = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    Subtract = true;
+                    txtview.setText(null);
                 }
                 catch (Exception e) {}
             }
@@ -316,9 +316,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    mMultiplication = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    Multiplication = true;
+                    txtview.setText(null);
                 }
                 catch (Exception e) {}
             }
@@ -327,9 +327,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    mValueOne = Float.parseFloat(txtbtn.getText() + "");
-                    mDivision = true;
-                    txtbtn.setText(null);
+                    ValueOne = Float.parseFloat(txtview.getText() + "");
+                    Division = true;
+                    txtview.setText(null);
                 }
                 catch (Exception e) {}
             }
@@ -338,81 +338,81 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (mSin == true) {
-                        if (mArithmetic == true) {
+                    if (Sin == true) {
+                        if (Arithmetic == true) {
                             String str;
-                            str = txtbtn.getText().toString();
+                            str = txtview.getText().toString();
                             str = str.substring(3);
                             a = Math.sin(Double.parseDouble(str));
-                            txtbtn.setText(a + "");
-                            mArithmetic = false;
-                            mSin = false;
+                            txtview.setText(a + "");
+                            Arithmetic = false;
+                            Sin = false;
                         }
 
                     }
-                    if (mCos == true) {
-                        if (mArithmetic == true) {
+                    if (Cos == true) {
+                        if (Arithmetic == true) {
                             String str;
-                            str = txtbtn.getText().toString();
+                            str = txtview.getText().toString();
                             str = str.substring(3);
                             a = Math.cos(Double.parseDouble(str));
-                            txtbtn.setText(a + "");
-                            mArithmetic = false;
-                            mCos = false;
+                            txtview.setText(a + "");
+                            Arithmetic = false;
+                            Cos = false;
                         }
                     }
-                    if (mTan == true) {
-                        if (mArithmetic == true) {
+                    if (Tan == true) {
+                        if (Arithmetic == true) {
                             String str;
-                            str = txtbtn.getText().toString();
+                            str = txtview.getText().toString();
                             str = str.substring(3);
                             a = Math.sin(Double.parseDouble(str));
-                            txtbtn.setText(a + "");
-                            mArithmetic = false;
-                            mTan = false;
+                            txtview.setText(a + "");
+                            Arithmetic = false;
+                            Tan = false;
                         }
                     }
-                    if (istpower2ndno == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        int exp = (int) Math.pow(mValueOne, mValueTwo);
-                        txtbtn.setText(exp + "");
-                        istpower2ndno = false;
+                    if (istpower == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        int exp = (int) Math.pow(ValueOne, ValueTwo);
+                        txtview.setText(exp + "");
+                        istpower = false;
                     }
-                    if (mAddition == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        txtbtn.setText(mValueOne + mValueTwo + "");
-                        mAddition = false;
+                    if (Addition == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        txtview.setText(ValueOne + ValueTwo + "");
+                        Addition = false;
                     }
-                    if (mReminder == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        txtbtn.setText(mValueOne % mValueTwo + "");
-                        mReminder = false;
+                    if (Reminder == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        txtview.setText(ValueOne % ValueTwo + "");
+                        Reminder = false;
                     }
-                    if (mNoPower == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        int exp = (int) Math.pow(mValueOne, mValueTwo);
-                        txtbtn.setText(exp + "");
-                        mNoPower = false;
-                    }
-
-                    if (mSubtract == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        txtbtn.setText(mValueOne - mValueTwo + "");
-                        mSubtract = false;
+                    if (NoPower == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        int exp = (int) Math.pow(ValueOne, ValueTwo);
+                        txtview.setText(exp + "");
+                        NoPower = false;
                     }
 
-                    if (mMultiplication == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        txtbtn.setText(mValueOne * mValueTwo + "");
-                        mMultiplication = false;
+                    if (Subtract == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        txtview.setText(ValueOne - ValueTwo + "");
+                        Subtract = false;
                     }
 
-                    if (mDivision == true) {
-                        mValueTwo = Float.parseFloat(txtbtn.getText() + "");
-                        txtbtn.setText(mValueOne / mValueTwo + "");
-                        mDivision = false;
+                    if (Multiplication == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        txtview.setText(ValueOne * ValueTwo + "");
+                        Multiplication = false;
                     }
-                    ans = Double.parseDouble(txtbtn.getText().toString());
+
+                    if (Division == true) {
+                        ValueTwo = Float.parseFloat(txtview.getText() + "");
+                        txtview.setText(ValueOne / ValueTwo + "");
+                        Division = false;
+                    }
+                    ans = Double.parseDouble(txtview.getText().toString());
                 }catch(Exception e){
                     Toast t = Toast.makeText(MainActivity.this, "Syntax ERROR", Toast.LENGTH_LONG);
                     t.setGravity(Gravity.CENTER, 0, 0);
@@ -423,19 +423,19 @@ public class MainActivity extends AppCompatActivity {
         clearbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(null);
+                txtview.setText(null);
             }
         });
         pointbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtbtn.setText(txtbtn.getText()+".");
+                txtview.setText(txtview.getText()+".");
             }
         });
         ansbuttton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtbtn.setText(ans+"");
+                txtview.setText(ans+"");
             }
         });
         about.setOnClickListener(new View.OnClickListener() {
