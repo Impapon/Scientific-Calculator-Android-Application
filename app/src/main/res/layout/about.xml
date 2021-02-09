@@ -7,80 +7,65 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    android:gravity="left"
-    tools:context=".About">
+    tools:context=".About"
+    android:layout_gravity="center"
+    android:gravity="center">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginTop="140dp"
-                android:layout_marginBottom="40dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="30dp"
-                android:text=" Scientific Calculator"/>
-            <TextView
-                android:id="@+id/abtTextID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="40dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:text="Version: 1.0"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="Last update:"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginBottom="40dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:text="October 2019"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="Developer:"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:text="Redwan Sharafat Kabir"/>
-        </LinearLayout>
-    </ScrollView>
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="Pocket Brain"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:text="Scientific Calculator"/>
+
+        <TextView
+            android:id="@+id/abtTextID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:text="Version: 1.0"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:text="Developer:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:text="Redwan Sharafat Kabir"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,10 +10,14 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +28,7 @@
             android:gravity="center_horizontal"
             android:textColor="#3689B4"
             android:textStyle="bold"
-            android:textSize="30dp"/>
+            android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/txt"
@@ -33,18 +37,15 @@
             android:background="#FFFFFF"
             android:gravity="center_horizontal"
             android:hint="0"
-            android:textColorHint="#4B4A4A"
+            android:textColorHint="#676262"
             android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="30dp"/>
+            android:textSize="22dp"/>
 
-        <ImageView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_gravity="center"
-            android:background="@drawable/thinblackline"
-            android:gravity="center_horizontal"
-            android:backgroundTintMode="screen"/>
+            android:layout_height="2dp"
+            android:background="#000"
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -363,8 +364,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="wrap_content">
             <Button
                 android:id="@+id/zerobtn"
                 android:layout_width="wrap_content"
@@ -427,19 +427,21 @@
                 android:textSize="23dp"
                 android:textStyle="bold"/>
         </LinearLayout>
+
         <Button
             android:id="@+id/aboutId"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_weight="1"
+            android:layout_marginTop="20dp"
             android:text="About"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textAllCaps="false"
-            android:background="#478AAD"
+            android:textAllCaps="true"
+            android:background="@drawable/about_button"
             android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="22sp"
+            android:fontFamily="sans-serif"/>
+
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>
